@@ -1,144 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ro.pub.cs.systems.eim.practicaltest02v10.PracticalTest02v10MainActivity">
+    android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="25sp"
+        android:text="Server"
         android:textStyle="bold"
-        android:text="@string/server"/>
+        android:textSize="20sp" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/server_port_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false">
+        android:hint="Server port (e.g. 5000)"
+        android:inputType="number" />
 
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/server_port_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/server_port"/>
-
-        </ScrollView>
-
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/connect_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/connect"/>
-
-        </ScrollView>
-
-    </LinearLayout>
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="10dp" />
+    <Button
+        android:id="@+id/start_server_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Server" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="25sp"
+        android:text="Client"
         android:textStyle="bold"
-        android:text="@string/client"/>
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"/>
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/client_address_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false">
+        android:hint="Client address (127.0.0.1)" />
 
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/client_address_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/server_address"/>
-
-        </ScrollView>
-
-        <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/client_port_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/client_port"/>
-
-        </ScrollView>
-
-    </LinearLayout>
-
-    <GridLayout
+    <EditText
+        android:id="@+id/client_port_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="2"
-        android:columnCount="2">
+        android:hint="Client port"
+        android:inputType="number" />
 
-        <EditText
-            android:id="@+id/city_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="5"
-            android:hint="@string/city"
-            android:layout_row="0"
-            android:layout_column="0"/>
+    <EditText
+        android:id="@+id/pokemon_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Pokemon nume" />
 
-        <Spinner
-            android:id="@+id/information_type_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/information_types"
-            android:layout_row="1"
-            android:layout_column="0"/>
-
-        <Button
-            android:id="@+id/get_weather_forecast_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/get_weather_forecast"
-            android:layout_row="0"
-            android:layout_rowSpan="2"
-            android:layout_column="1"/>
-
-    </GridLayout>
+    <Button
+        android:id="@+id/get_info_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Da informatiile despre Pokemon" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp">
 
         <TextView
-            android:id="@+id/weather_forecast_text_view"
+            android:id="@+id/result_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="10"/>
-
+            android:text="Result"
+            android:textSize="16sp" />
     </ScrollView>
 
 </LinearLayout>
