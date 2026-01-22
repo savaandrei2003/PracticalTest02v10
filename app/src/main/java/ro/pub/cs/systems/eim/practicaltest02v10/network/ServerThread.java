@@ -44,13 +44,13 @@ public class ServerThread extends Thread {
     @Override
     public void run() {
         if (serverSocket == null) {
-            Log.e(Constants.TAG, "[SERVER] ServerSocket is null. Server not started.");
+            Log.e(Constants.TAG, "[SERVER] Server not started.");
             return;
         }
 
         try {
             while (!isInterrupted()) {
-                Log.i(Constants.TAG, "[SERVER] Waiting for a client...");
+                Log.i(Constants.TAG, "[SERVER] Waiting for a client");
                 Socket socket = serverSocket.accept();
                 new CommunicationThread(this, socket).start();
             }

@@ -5,13 +5,21 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Numele pokemon -->
+    <EditText
+        android:id="@+id/pokemon_name_edit_text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Server"
-        android:textStyle="bold"
-        android:textSize="20sp" />
+        android:hint="Pokemon name (e.g. pikachu)" />
 
+    <!-- Buton cerere -->
+    <Button
+        android:id="@+id/get_info_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fetch Pokemon" />
+
+    <!-- (Al doilea buton) pornește serverul local -->
     <EditText
         android:id="@+id/server_port_edit_text"
         android:layout_width="match_parent"
@@ -25,51 +33,29 @@
         android:layout_height="wrap_content"
         android:text="Start Server" />
 
+    <!-- TextView pentru abilități -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Client"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="12dp"/>
-
-    <EditText
-        android:id="@+id/client_address_edit_text"
+        android:id="@+id/abilities_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Client address (127.0.0.1)" />
+        android:text="Abilities:"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
 
-    <EditText
-        android:id="@+id/client_port_edit_text"
+    <TextView
+        android:id="@+id/types_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Client port"
-        android:inputType="number" />
+        android:text="Types:"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp" />
 
-    <EditText
-        android:id="@+id/pokemon_name_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Pokemon nume" />
-
-    <Button
-        android:id="@+id/get_info_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Da informatiile despre Pokemon" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:id="@+id/result_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Result"
-            android:textSize="16sp" />
-    </ScrollView>
+    <!-- ImageView pentru pokemon (din sprites/front_default) -->
+    <ImageView
+        android:id="@+id/pokemon_image_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Pokemon image" />
 
 </LinearLayout>
